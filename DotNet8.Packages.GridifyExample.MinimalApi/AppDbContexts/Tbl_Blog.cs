@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DotNet8.Packages.GridifyExample.MinimalApi.AppDbContexts;
+﻿namespace DotNet8.Packages.GridifyExample.MinimalApi.AppDbContexts;
 
 [Table("Tbl_Blog")]
 public class Tbl_Blog
