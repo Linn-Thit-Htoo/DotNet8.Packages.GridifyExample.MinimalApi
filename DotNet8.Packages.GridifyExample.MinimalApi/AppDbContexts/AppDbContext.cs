@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace DotNet8.Packages.GridifyExample.MinimalApi.AppDbContexts;
+﻿namespace DotNet8.Packages.GridifyExample.MinimalApi.AppDbContexts;
 
 public class AppDbContext : DbContext
 {

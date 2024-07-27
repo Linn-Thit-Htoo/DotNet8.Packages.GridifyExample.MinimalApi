@@ -1,7 +1,6 @@
 using DotNet8.Packages.GridifyExample.MinimalApi.AppDbContexts;
 using Gridify;
 using Gridify.EntityFramework;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
