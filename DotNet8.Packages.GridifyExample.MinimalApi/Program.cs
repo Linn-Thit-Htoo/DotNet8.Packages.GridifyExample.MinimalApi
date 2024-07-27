@@ -1,7 +1,3 @@
-using DotNet8.Packages.GridifyExample.MinimalApi.AppDbContexts;
-using Gridify;
-using Gridify.EntityFramework;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -48,7 +44,12 @@ app.MapGet(
     "/blogV2",
     async (int pageNo, int pageSize, AppDbContext db) =>
     {
-        var query = new GridifyQuery() { Page = pageNo, PageSize = pageSize, OrderBy = "BlogId desc" };
+        var query = new GridifyQuery()
+        {
+            Page = pageNo,
+            PageSize = pageSize,
+            OrderBy = "BlogId desc"
+        };
         return Results.Ok(await db.Tbl_Blogs.GridifyAsync(query));
     }
 );
