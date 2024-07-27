@@ -25,14 +25,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapGet(
-    "/greeting",
-    () =>
-    {
-        return Results.Ok("Hello!");
-    }
-);
-
-app.MapGet(
     "/blog",
     async (int pageNo, int pageSize, AppDbContext db) =>
     {
@@ -50,6 +42,15 @@ app.MapGet(
         return Results.Ok(
             await query.GridifyAsync(new GridifyQuery() { Page = pageNo, PageSize = pageSize })
         );
+    }
+);
+
+app.MapGet(
+    "/blogV2",
+    async (int pageNo, int pageSize, AppDbContext db) =>
+    {
+        var query = new GridifyQuery() { Page = pageNo, PageSize = pageSize, OrderBy = "BlogId desc" };
+        return Results.Ok(await db.Tbl_Blogs.GridifyAsync(query));
     }
 );
 
